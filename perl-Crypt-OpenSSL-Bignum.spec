@@ -3,8 +3,8 @@
 %bcond_without	tests	# Do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Crypt
-%define	pnam	OpenSSL-Bignum
+%define		pdir	Crypt
+%define		pnam	OpenSSL-Bignum
 Summary:	Crypt::OpenSSL::Bignum - OpenSSL's multiprecision integer arithmetic
 Summary(pl):	Crypt::OpenSSL::Bignum - arytmetyka liczb ca³kowitych du¿ej precyzji z OpenSSL
 Name:		perl-Crypt-OpenSSL-Bignum
