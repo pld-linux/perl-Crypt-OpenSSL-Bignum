@@ -6,7 +6,7 @@
 %define		pdir	Crypt
 %define		pnam	OpenSSL-Bignum
 Summary:	Crypt::OpenSSL::Bignum - OpenSSL's multiprecision integer arithmetic
-Summary(pl):	Crypt::OpenSSL::Bignum - arytmetyka liczb ca³kowitych du¿ej precyzji z OpenSSL
+Summary(pl.UTF-8):   Crypt::OpenSSL::Bignum - arytmetyka liczb caÅ‚kowitych duÅ¼ej precyzji z OpenSSL
 Name:		perl-Crypt-OpenSSL-Bignum
 Version:	0.03
 Release:	1
@@ -28,12 +28,12 @@ addition, this module can be used to provide access to bignum values
 produced by other OpenSSL modules, such as key parameters from
 Crypt::OpenSSL::RSA.
 
-%description -l pl
-Crypt::OpenSSL::Bignum daje dostêp do bibliotek arytmetyki
-liczb ca³kowitych du¿ej precyzji z OpenSSL. Aktualnie wiele, ale nie
-wszystkie, operacje arytmetyczne udostêpniane przez OpenSSL s±
-dostêpne z Perla. Ponadto ten modu³ mo¿e byæ u¿ywany do udostêpnienia
-du¿ych warto¶ci produkowanych przez inne modu³y OpenSSL, takie jak
+%description -l pl.UTF-8
+Crypt::OpenSSL::Bignum daje dostÄ™p do bibliotek arytmetyki
+liczb caÅ‚kowitych duÅ¼ej precyzji z OpenSSL. Aktualnie wiele, ale nie
+wszystkie, operacje arytmetyczne udostÄ™pniane przez OpenSSL sÄ…
+dostÄ™pne z Perla. Ponadto ten moduÅ‚ moÅ¼e byÄ‡ uÅ¼ywany do udostÄ™pnienia
+duÅ¼ych wartoÅ›ci produkowanych przez inne moduÅ‚y OpenSSL, takie jak
 parametry klucza z Crypt::OpenSSL::RSA.
 
 %prep
