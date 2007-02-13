@@ -6,7 +6,7 @@
 %define		pdir	Crypt
 %define		pnam	OpenSSL-Bignum
 Summary:	Crypt::OpenSSL::Bignum - OpenSSL's multiprecision integer arithmetic
-Summary(pl.UTF-8):   Crypt::OpenSSL::Bignum - arytmetyka liczb całkowitych dużej precyzji z OpenSSL
+Summary(pl.UTF-8):	Crypt::OpenSSL::Bignum - arytmetyka liczb całkowitych dużej precyzji z OpenSSL
 Name:		perl-Crypt-OpenSSL-Bignum
 Version:	0.03
 Release:	1
