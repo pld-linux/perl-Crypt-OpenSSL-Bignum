@@ -64,6 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Crypt/OpenSSL/Bignum.pm
 %{perl_vendorarch}/Crypt/OpenSSL/Bignum
 %dir %{perl_vendorarch}/auto/Crypt/OpenSSL/Bignum
-%{perl_vendorarch}/auto/Crypt/OpenSSL/Bignum/Bignum.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Crypt/OpenSSL/Bignum/Bignum.so
 %{_mandir}/man3/Crypt::OpenSSL::Bignum*.3pm*
