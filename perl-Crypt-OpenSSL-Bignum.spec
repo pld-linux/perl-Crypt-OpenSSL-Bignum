@@ -7,13 +7,13 @@
 Summary:	Crypt::OpenSSL::Bignum - OpenSSL's multiprecision integer arithmetic
 Summary(pl.UTF-8):	Crypt::OpenSSL::Bignum - arytmetyka liczb całkowitych dużej precyzji z OpenSSL
 Name:		perl-Crypt-OpenSSL-Bignum
-Version:	0.06
-Release:	7
+Version:	0.09
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Crypt/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	5673ee17919231c6394382e48f80c582
+# Source0-md5:	c8ae05771c70c69b3e5647b29a885ed2
 URL:		http://search.cpan.org/dist/Crypt-OpenSSL-Bignum/
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	perl-devel >= 1:5.8.0
