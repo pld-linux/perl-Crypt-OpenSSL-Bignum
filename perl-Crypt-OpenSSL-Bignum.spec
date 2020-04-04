@@ -14,6 +14,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Crypt/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c8ae05771c70c69b3e5647b29a885ed2
+Patch0:		%{name}-mod_sqrt.patch
 URL:		http://search.cpan.org/dist/Crypt-OpenSSL-Bignum/
 BuildRequires:	openssl-devel >= 0.9.7d
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -38,6 +39,7 @@ parametry klucza z Crypt::OpenSSL::RSA.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \

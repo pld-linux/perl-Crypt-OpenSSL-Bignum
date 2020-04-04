@@ -1,0 +1,56 @@
+diff -ruN Crypt-OpenSSL-Bignum-0.09.orig/Bignum.pm Crypt-OpenSSL-Bignum-0.09/Bignum.pm
+--- Crypt-OpenSSL-Bignum-0.09.orig/Bignum.pm	2017-12-01 20:07:57.000000000 +0100
++++ Crypt-OpenSSL-Bignum-0.09/Bignum.pm	2020-04-04 20:21:22.290086257 +0200
+@@ -314,6 +314,15 @@
+ a new Crypt::OpenSSL::Bignum object, using the second argument,
+ a Crypt::OpenSSL::Bignum::CTX object, as a scratchpad.
+ 
++=item mod_sqrt
++
++ my $new_bn_object = $self->mod_sqrt($bn_n, $ctx);
++ # new object is created $self is not modified
++
++Computes the square root of C<$self> modulo C<$bn_n> and returns the result in
++a new Crypt::OpenSSL::Bignum object, using the second argument,
++a Crypt::OpenSSL::Bignum::CTX object, as a scratchpad.
++
+ =item gcd
+ 
+  my $new_bn_object = $self->gcd($bn_b, $ctx);
+diff -ruN Crypt-OpenSSL-Bignum-0.09.orig/Bignum.xs Crypt-OpenSSL-Bignum-0.09/Bignum.xs
+--- Crypt-OpenSSL-Bignum-0.09.orig/Bignum.xs	2017-12-01 20:05:15.000000000 +0100
++++ Crypt-OpenSSL-Bignum-0.09/Bignum.xs	2020-04-04 20:21:04.377184936 +0200
+@@ -354,6 +354,20 @@
+     RETVAL
+ 
+ Crypt::OpenSSL::Bignum
++BN_mod_sqrt(self, n, ctx)
++    Crypt::OpenSSL::Bignum self;
++    Crypt::OpenSSL::Bignum n;
++    Crypt::OpenSSL::Bignum::CTX ctx;
++  PREINIT:
++    BIGNUM* bn;
++  CODE:
++    checkOpenSslCall( bn = BN_new() );
++    checkOpenSslCall( BN_mod_sqrt( bn, self, n, ctx ) );
++    RETVAL = bn;
++  OUTPUT:
++    RETVAL
++
++Crypt::OpenSSL::Bignum
+ BN_gcd(self, b, ctx)
+     Crypt::OpenSSL::Bignum self;
+     Crypt::OpenSSL::Bignum b;
+diff -ruN Crypt-OpenSSL-Bignum-0.09.orig/test.pl Crypt-OpenSSL-Bignum-0.09/test.pl
+--- Crypt-OpenSSL-Bignum-0.09.orig/test.pl	2016-10-22 12:46:23.000000000 +0200
++++ Crypt-OpenSSL-Bignum-0.09/test.pl	2020-04-04 20:28:16.946804394 +0200
+@@ -125,6 +125,9 @@
+ ok( 36 == $bn6->sqr( $ctx )->get_word() );
+ ok( 12 == $bn23->mod_inverse( $bn25, $ctx )->get_word() );
+ 
++my $bn18 = _new_bn( 18 );
++ok( 8 == $bn18->mod_sqrt( $bn23, $ctx )->get_word() );
++
+ ok(Crypt::OpenSSL::Bignum->new()->get_word == 0);
+ ok(Crypt::OpenSSL::Bignum->rand(32, 0, 0));
+ ok(Crypt::OpenSSL::Bignum->pseudo_rand(32, 0, 0));
